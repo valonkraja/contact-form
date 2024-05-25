@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --light-green: hsl(148, 38%, 91%);
+  --green: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 56%);
+  --medium-grey: hsl(186, 15%, 59%);
+  --dark-grey: hsl(187, 24%, 22%);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Karla";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--light-green);
+  color: var(--medium-grey);
+}
+
+h1 {
+  color: var(--dark-grey);
+  margin-bottom: 30px;
+  line-height: 0;
+}
+
+.error {
+  display: none;
+  color: var(--red);
+}
+label span,
+.query-text span {
+  color: var(--green);
+}
+
+.success-modal {
+  display: none;
+  position: relative;
+  top: 10px;
+  width: 480px;
+  background-color: var(--dark-grey);
+  color: white;
+
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.success-modal .title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.success-modal p {
+  color: var(--light-green);
+}
+
+form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 600px;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.name-fields label {
+  width: 50%;
+}
+
+.name-fields label input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--medium-grey);
+  padding-left: 10px;
+}
+
+.name-fields label input[type="text"]:focus {
+  border: 2px solid var(--green);
+}
+
+.email-label {
+  width: 100%;
+}
+
+input[type="email"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--medium-grey);
+  padding-left: 10px;
+}
+
+input[type="email"]:focus {
+  border: 2px solid var(--green);
+}
+
+.text-field {
+  margin-top: 10px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid var(--medium-grey);
+  outline: none;
+  padding: 10px;
+}
+
+textarea:focus {
+  border: 2px solid var(--green);
+}
+
+.submit-btn {
+  width: 100%;
+  height: 40px;
+  background-color: var(--green);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+}
+
+.checkbox-field {
+  margin-top: 10px;
+}
+
+label {
+  line-height: 28px;
+}
+
+.query-field {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.query-div {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  gap: 10px;
+}
+
+.general-div,
+.support-div {
+  padding: 5px;
+  border: 1px solid var(--medium-grey);
+  border-radius: 5px;
+  width: 50%;
+  display: flex;
+  gap: 5px;
+}
+
+.general-div:has(> input[type="radio"]:checked),
+.support-div:has(> input[type="radio"]:checked) {
+  background-color: var(--light-green);
+  border: 1px solid var(--green);
+}
+
+input[type="radio"]:checked {
+  display: none;
+}
+
+input[type="radio"]:checked {
+  display: none;
+}
+
+.rb {
+  display: none;
+  background-repeat: no-repeat;
+  width: 13px;
+}
+
+input[type="radio"]:checked + .rb {
+  display: block;
+}
+
+.cb-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="checkbox"]:checked {
+  display: none;
+}
+
+.cb {
+  display: none;
+  background-repeat: no-repeat;
+  width: 13px;
+}
+
+input[type="checkbox"]:checked + .cb {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .success-modal {
+    width: 300px;
+    top: 35px;
+  }
+  form {
+    margin: 30px;
+    width: 350px;
+    padding: 40px 25px;
+  }
+  .name-fields {
+    flex-direction: column;
+  }
+
+  .name-fields label {
+    width: 100%;
+  }
+
+  .query-div {
+    flex-direction: column;
+  }
+  .general-div,
+  .support-div {
+    width: 100%;
+  }
+
+  .text-field {
+    margin-top: 0px;
+  }
+}

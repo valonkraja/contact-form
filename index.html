@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="success-modal">
+      <div class="title">
+        <img src="./assets/images/icon-success-check.svg" alt=""><h4>Message Sent!</h4>
+      </div>
+      <p>
+        Thanks for completing the form. We'll be in touch soon!
+
+      </p>
+    </div>
+   
+    <form action="#">
+      <h1>Contact Us</h1>
+      <fieldset class="name-fields">
+        <label for="f-name"
+          >First Name <span>*</span><br />
+          <input type="text" id="f-name" name="f-name"  /><br />
+          <span class="error error-fname">This field is required</span>
+        </label>
+
+        <label for="l-name"
+          >Last Name <span>*</span><br />
+          <input type="text" id="l-name" name="l-name"  /><br />
+          <span class="error error-lname">This field is required</span>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="email" id="email-label"
+          >Email Address <span>*</span><br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="email"
+            
+          /><br />
+          <span class="error error-email">Please enter a valid email address</span>
+        </label>
+      </fieldset>
+      <fieldset class="query-field">
+        <p class="query-text">Query Type <span>*</span></p>
+        <div class="query-div">
+          <div class="general-div">
+            <input
+              type="radio"
+              name="query-type"
+              id="general"
+              value="general enquiry"
+              
+            />
+            <img src="./assets/images/icon-radio-selected.svg" class="rb"></img>
+            <label for="general">General Enquiry </label>
+          </div>
+          <div class="support-div">
+            <input
+              type="radio"
+              name="query-type"
+              id="support"
+              value="support request"
+              
+            />
+            <img src="./assets/images/icon-radio-selected.svg" class="rb"></img>
+            <label for="support"> Support Request</label>
+          </div>
+        </div>
+
+        <br />
+        <span class="error error-query">Please select a query type</span>
+      </fieldset>
+
+      <fieldset class="text-field">
+        <label for="message"
+          >Message <span>*</span><br />
+          <textarea name="message" id="message" ></textarea><br />
+          <span class="error error-message">This field is required</span>
+        </label>
+      </fieldset>
+      <fieldset class="checkbox-field">
+          <div class="cb-row">
+          <input type="checkbox" name="consent" id="consent" />
+          <img src="./assets/images/icon-checkbox-check.svg" class="cb">
+          
+          <label for="consent">I consent to being contacted by the team <span>*</span><br /></label>
+          </div>
+          <span class="error error-consent"
+          >To submit this form, please consent to being contacted</span
+        >
+      </fieldset>
+      <input type="submit" value="Submit" class="submit-btn" />
+    </form>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Valon Kraja</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
